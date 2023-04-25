@@ -5,5 +5,8 @@
  * @returns {object} - returns the new object
  */
 export const pick = (obj, ...fields) => {
-
+  return fields.reduce((res, prop) => {
+    res[prop] = obj[prop];
+    return res;
+  }, {});
 };
